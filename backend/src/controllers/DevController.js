@@ -60,13 +60,19 @@ module.exports = {
     async destroy(req, res){
         const github_username = req.headers.github_username;
         const { latitude, longitude, techs } = req.body;
+        let message = "";
         
         const dev = Dev.findOne({ github_username });
         
         if(dev){           
-            await dev.deleteOne({ github_username });         
+            await dev.deleteOne({ github_username:"rr" }, (err) =>{
+                if(!err)
+                message = "200ok";
+                else
+                message = err;
+            });         
          }   
         
-         res.json({ code: "200ok" });
+         res.json({ code:message });
     }
 };
