@@ -35,6 +35,8 @@ li.dev-item header .user-info {
     margin-top: 2px;
 }
 
+
+
 li.dev-item p {
     color:#666;
     font-size: 14px;
@@ -50,5 +52,14 @@ li.dev-item a {
 
 li.dev-item a:hover{
     color: #5a2ea6;
+}
+
+li.dev-item #linkDelete {
+   color: red;
+   cursor:pointer;
+}
+
+li.dev-item #linkDelete:hover{
+    color: #e49fbc;
 }
 

@@ -25,6 +25,13 @@ function App() {
     setListDev([...listDev,dev.data]);
   }
 
+   function removeDev(_id){
+    const index = listDev.findIndex(item => item._id === _id);
+     var newList = [...listDev];
+     newList.splice(index,1);
+     setListDev([...newList]);
+  }
+
   return (
     <div id="app">
       <aside>
@@ -34,7 +41,7 @@ function App() {
 
       <main>
         <ul>
-          {listDev.map(dev => <DevItem dev={dev}/>)}
+          {listDev.map(dev => <DevItem  key={dev._id}  dev={dev} removeDev={removeDev}/>)}
         </ul>
       </main>
     </div>
